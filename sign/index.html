@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/activity.css"/>
+		
+		<script src="./js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.award p{color:#FFFFFF;font-size:12px;}
+		</style>
+		
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">&nbsp;</h1>
+		</header>
+		
+		<div class="mui-content cont-actiyity pane">
+			<div id="scroll" class="mui-scroll-wrapper" style="transform: translate3d(0px, -15.5px, 0px) scale(1);">
+				<div class="bg">
+					<div class="header">
+						<img src="images/header.png" alt="">
+						<div class="signdays">
+							<p>
+								我已累计签到：<span class="ng-binding">0</span> 天
+							</p>
+						</div>
+					</div>
+					<div class="gamebox">
+						<div class="light">
+							<img src="images/light.png" alt="">
+						</div>
+						<div class="desk">
+							<img src="images/desk.png" alt="">
+						</div>
+						<div class="egg" ng-class="ani" ng-click="eggOpen();">
+							<img ng-src="images/egg_un.png" alt="" src="images/egg_un.png">
+						</div>
+						<div class="hammer" ng-class="ani" ng-click="eggOpen();">
+							<img src="images/hammer.png" alt="">
+						</div>
+					</div>
+					<div class="award">
+						<p class="tit">活动规则</p>
+						<p>所有玩家只需要每天登录平台，充值达到相应的金额并且达到相应投注量即可参与抽奖活动</p>
+						<p>每天充值和投注量以及获得的抽奖机会列表：</p>
+						<!-- ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding" style="">
+							签到第1天 充值500元  投注量1000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding">
+							签到第2天 充值1000元  投注量2000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding">
+							签到第3天 充值2000元  投注量4000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding">
+							签到第4天 充值5000元  投注量10000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding">
+							签到第5天 充值10000元  投注量30000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding">
+							签到第6天 充值20000元  投注量60000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details --><p ng-repeat="detail in activity.details" class="ng-binding">
+							签到第7天 充值50000元  投注量150000元  获得1次抽奖机会
+						</p><!-- end ngRepeat: detail in activity.details -->
+						<p style="color: red;">如果中间间断一天，连续签到将被重置开始时间隔天计算。连续天数越大抽奖获得的奖品更丰厚。</p>
+						<p>当天达到条件后，第二天可以获得1次抽奖机会，获得抽奖机会后请及时参与抽奖，抽奖机会将在次日凌晨5点重置</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- end mui-content -->
+
+		
+		<script type="text/javascript">
+			(function($) {
+                $('#scroll').scroll({
+                    indicators: true //是否显示滚动条
+                });
+                mui('.mui-scroll-wrapper').scroll({
+                    deceleration: 0.0003//flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+                });
+            })(mui);
+		</script>
+	</body>
+</html>
